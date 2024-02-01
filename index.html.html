@@ -1,0 +1,209 @@
+<html>
+<head>
+<title>Design my website</title>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shopping Cart</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/all.css" />
+<link rel="stylesheet" href="css/all.css">
+</head>
+
+     <body>
+
+          <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #ddd;">
+              <div class="left-header">
+                  <a href="index.html" class="logo" style="font-size: 1.3rem;">Online Shopping </a>        </div>
+              <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fas fa-bars text-secondary" style="font-size: 1.5rem;"></i> 
+              </button>
+      
+              <div class="navbar-collapse collapse" id="navbarSupportedContent" style="">
+      
+                      <div class="userName" style="margin-left: 50%; transform: translate(-150%); display: none;">
+                          <p style="margin-bottom: 0;">Welcome <span id="user-name"></span></p>
+                       </div>
+      
+      
+             
+                <div class="right-header ml-auto">
+                  <div class="login" style="display: block;">
+                      <ul>
+                          <li> <a href="login.html">Login</a> </li>
+                          <li> <a href="register.html">Register</a> </li>
+                      </ul>
+                  </div>
+               
+                      <div class="user d-flex">
+                          <div class="cart-box" style="display: none;">
+                              <div class="cart-btn" onclick="cartBtn()">
+                                  <i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;<span> Cart </span><span id="number">0</span> <i class="fas fa-caret-down arrow" id="arrow"></i>
+                              </div>
+                                  <div class="cart">
+                                      <ul id="favouriteItems">
+                                      </ul>
+                                      <a href="products.html" id="view" onclick="viewProduct()">View all product</a>
+                                  </div>
+                          </div> 
+                      </div>
+                      <div class="logout-box" style="display: none;">
+                          <a href="#" class="logout">logout</a>
+                      </div>
+              </div> 
+              </div>
+            </nav>
+      
+          <div class="search-box">
+              <select class="custom-select m-2">
+                  <option selected="">Search by Name</option>
+                  <option value="1">Search by Category</option>
+                </select>
+              <input type="text" placeholder="Search" class="form-control m-2 search">
+          </div>
+          <hr>
+      
+          <div class="container">
+              <div class="row">
+                      
+      
+      
+              
+          <div class="card col-lg-4 col-md-6 col-sm-12 mt-1 mb-1" style="width: 18rem;">
+              <img src="images/product1.jpg" class="card-img-top" alt="product-1">
+                  <div class="card-body">
+                      <h5 class="card-title">Product : T-shirt adidas</h5>
+                      <h5 class="card-text">Price :  80 $</h5>
+                       <h5>Category : fashion</h5>
+                          <div class="d-flex" style="justify-content: space-between;"> 
+                              <button class="btn btn-primary" id="1" onclick="addItems(this.id)" style="display: block;">Add to cart</button>
+                              <button class="btn btn-danger" id="10000" onclick="removeItems(this.id)" style="display: none;">Remove from cart</button>
+                              <a href="#" style="margin-left: auto; display: inline-block;"><i class="fas fa-heart" style="font-size: 1.5rem; color: rgb(185, 184, 184);" id="100000" onclick="addFavourite(this.id)"></i></a>
+                          </div> 
+                  </div>
+          </div> <!-- End of card -->
+          
+          <div class="card col-lg-4 col-md-6 col-sm-12 mt-1 mb-1" style="width: 18rem;">
+              <img src="images/product2.jpg" class="card-img-top" alt="product-1">
+                  <div class="card-body">
+                      <h5 class="card-title">Product : earpods</h5>
+                      <h5 class="card-text">Price :  150 $</h5>
+                       <h5>Category : Phone accessories </h5>
+                          <div class="d-flex" style="justify-content: space-between;"> 
+                              <button class="btn btn-primary" id="2" onclick="addItems(this.id)" style="display: block;">Add to cart</button>
+                              <button class="btn btn-danger" id="20000" onclick="removeItems(this.id)" style="display: none;">Remove from cart</button>
+                              <a href="#" style="margin-left: auto; display: inline-block;"><i class="fas fa-heart" style="font-size: 1.5rem; color: rgb(185, 184, 184);" id="200000" onclick="addFavourite(this.id)"></i></a>
+                          </div> 
+                  </div>
+          </div> <!-- End of card -->
+          
+          <div class="card col-lg-4 col-md-6 col-sm-12 mt-1 mb-1" style="width: 18rem;">
+              <img src="images/product3.jpg" class="card-img-top" alt="product-1">
+                  <div class="card-body">
+                      <h5 class="card-title">Product : Jacket</h5>
+                      <h5 class="card-text">Price :  120 $</h5>
+                       <h5>Category : fashion</h5>
+                          <div class="d-flex" style="justify-content: space-between;"> 
+                              <button class="btn btn-primary" id="3" onclick="addItems(this.id)" style="display: block;">Add to cart</button>
+                              <button class="btn btn-danger" id="30000" onclick="removeItems(this.id)" style="display: none;">Remove from cart</button>
+                              <a href="#" style="margin-left: auto; display: inline-block;"><i class="fas fa-heart" style="font-size: 1.5rem; color: rgb(185, 184, 184);" id="300000" onclick="addFavourite(this.id)"></i></a>
+                          </div> 
+                  </div>
+          </div> <!-- End of card -->
+          
+          <div class="card col-lg-4 col-md-6 col-sm-12 mt-1 mb-1" style="width: 18rem;">
+              <img src="images/product4.jpg" class="card-img-top" alt="product-1">
+                  <div class="card-body">
+                      <h5 class="card-title">Product : Adidas bottle</h5>
+                      <h5 class="card-text">Price :  50 $</h5>
+                       <h5>Category : Sport</h5>
+                          <div class="d-flex" style="justify-content: space-between;"> 
+                              <button class="btn btn-primary" id="4" onclick="addItems(this.id)" style="display: block;">Add to cart</button>
+                              <button class="btn btn-danger" id="40000" onclick="removeItems(this.id)" style="display: none;">Remove from cart</button>
+                              <a href="#" style="margin-left: auto; display: inline-block;"><i class="fas fa-heart" style="font-size: 1.5rem; color: rgb(185, 184, 184);" id="400000" onclick="addFavourite(this.id)"></i></a>
+                          </div> 
+                  </div>
+          </div> <!-- End of card -->
+          
+          <div class="card col-lg-4 col-md-6 col-sm-12 mt-1 mb-1" style="width: 18rem;">
+              <img src="images/product5.jpg" class="card-img-top" alt="product-1">
+                  <div class="card-body">
+                      <h5 class="card-title">Product : Glasses</h5>
+                      <h5 class="card-text">Price :  80 $</h5>
+                       <h5>Category : Men accessories</h5>
+                          <div class="d-flex" style="justify-content: space-between;"> 
+                              <button class="btn btn-primary" id="5" onclick="addItems(this.id)" style="display: block;">Add to cart</button>
+                              <button class="btn btn-danger" id="50000" onclick="removeItems(this.id)" style="display: none;">Remove from cart</button>
+                              <a href="#" style="margin-left: auto; display: inline-block;"><i class="fas fa-heart" style="font-size: 1.5rem; color: rgb(185, 184, 184);" id="500000" onclick="addFavourite(this.id)"></i></a>
+                          </div> 
+                  </div>
+          </div> <!-- End of card -->
+          
+          <div class="card col-lg-4 col-md-6 col-sm-12 mt-1 mb-1" style="width: 18rem;">
+              <img src="images/product6.jpg" class="card-img-top" alt="product-1">
+                  <div class="card-body">
+                      <h5 class="card-title">Product : Cap</h5>
+                      <h5 class="card-text">Price :  20 $</h5>
+                       <h5>Category : Men accessories</h5>
+                          <div class="d-flex" style="justify-content: space-between;"> 
+                              <button class="btn btn-primary" id="6" onclick="addItems(this.id)" style="display: block;">Add to cart</button>
+                              <button class="btn btn-danger" id="60000" onclick="removeItems(this.id)" style="display: none;">Remove from cart</button>
+                              <a href="#" style="margin-left: auto; display: inline-block;"><i class="fas fa-heart" style="font-size: 1.5rem; color: rgb(185, 184, 184);" id="600000" onclick="addFavourite(this.id)"></i></a>
+                          </div> 
+                  </div>
+          </div> <!-- End of card -->
+          
+          <div class="card col-lg-4 col-md-6 col-sm-12 mt-1 mb-1" style="width: 18rem;">
+              <img src="images/product7.jpg" class="card-img-top" alt="product-1">
+                  <div class="card-body">
+                      <h5 class="card-title">Product : Bag adidas</h5>
+                      <h5 class="card-text">Price :   110 $</h5>
+                       <h5>Category : Bags</h5>
+                          <div class="d-flex" style="justify-content: space-between;"> 
+                              <button class="btn btn-primary" id="7" onclick="addItems(this.id)" style="display: block;">Add to cart</button>
+                              <button class="btn btn-danger" id="70000" onclick="removeItems(this.id)" style="display: none;">Remove from cart</button>
+                              <a href="#" style="margin-left: auto; display: inline-block;"><i class="fas fa-heart" style="font-size: 1.5rem; color: rgb(185, 184, 184);" id="700000" onclick="addFavourite(this.id)"></i></a>
+                          </div> 
+                  </div>
+          </div> <!-- End of card -->
+          
+          <div class="card col-lg-4 col-md-6 col-sm-12 mt-1 mb-1" style="width: 18rem;">
+              <img src="images/product8.jpg" class="card-img-top" alt="product-1">
+                  <div class="card-body">
+                      <h5 class="card-title">Product : Shoes adidas</h5>
+                      <h5 class="card-text">Price :  80 $</h5>
+                       <h5>Category : sport</h5>
+                          <div class="d-flex" style="justify-content: space-between;"> 
+                              <button class="btn btn-primary" id="8" onclick="addItems(this.id)" style="display: block;">Add to cart</button>
+                              <button class="btn btn-danger" id="80000" onclick="removeItems(this.id)" style="display: none;">Remove from cart</button>
+                              <a href="#" style="margin-left: auto; display: inline-block;"><i class="fas fa-heart" style="font-size: 1.5rem; color: rgb(185, 184, 184);" id="800000" onclick="addFavourite(this.id)"></i></a>
+                          </div> 
+                  </div>
+          </div> <!-- End of card -->
+          
+          <div class="card col-lg-4 col-md-6 col-sm-12 mt-1 mb-1" style="width: 18rem;">
+              <img src="images/product9.png" class="card-img-top" alt="product-1">
+                  <div class="card-body">
+                      <h5 class="card-title">Product : Bag</h5>
+                      <h5 class="card-text">Price :  100 $</h5>
+                       <h5>Category : fashion</h5>
+                          <div class="d-flex" style="justify-content: space-between;"> 
+                              <button class="btn btn-primary" id="9" onclick="addItems(this.id)" style="display: block;">Add to cart</button>
+                              <button class="btn btn-danger" id="90000" onclick="removeItems(this.id)" style="display: none;">Remove from cart</button>
+                              <a href="#" style="margin-left: auto; display: inline-block;"><i class="fas fa-heart" style="font-size: 1.5rem; color: rgb(185, 184, 184);" id="900000" onclick="addFavourite(this.id)"></i></a>
+                          </div> 
+                  </div>
+          </div> <!-- End of card -->
+          </div> <!-- End of row -->
+           
+                
+                
+          </div> <!-- End oc container --> 
+    
+    
+     <script src="js/script.js"></script>
+    </body>
+    </html>
